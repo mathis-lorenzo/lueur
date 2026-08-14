@@ -76,19 +76,19 @@ func (w *Walker) walkReferenceHelper(node ast.Node, title string, destination st
 		return "", err
 	}
 
-	line, err := w.referenceLine(description, destination)
-	if err != nil {
-		return "", err
-	}
-
-	inlineAnswer := w.processReferenceLineEdgeCases(line, destination)
-
 	_, isAutoLink := node.(*ast.AutoLink)
 	if isAutoLink &&
 		w.options.FileFormat() == gophermap.FileFormatTxt &&
 		w.options.ReferencePosition() == AfterTraverse {
 		return description, nil
 	}
+
+	line, err := w.referenceLine(description, destination)
+	if err != nil {
+		return "", err
+	}
+
+	inlineAnswer := w.processReferenceLineEdgeCases(line, destination)
 
 	w.ctx.ReferencesQueue = append(w.ctx.ReferencesQueue, *line)
 
