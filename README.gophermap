@@ -9,13 +9,13 @@ ibuiltwithnix badge	/	localhost	70
 hbuiltwithnix badge	URL:https://builtwithnix.org/badge.svg	builtwithnix.org	443
 hbuiltwithnix badge	URL:https://builtwithnix.org	builtwithnix.org	443
 i	/	localhost	70
-iThe name of the project is lueur, pronounced \lɥœʁ\, which	/	localhost	70
+iThe name of the project is lueur, pronounced \\lɥœʁ\\, which	/	localhost	70
 iis a French word for vivid, momentary expression.	/	localhost	70
 i	/	localhost	70
 iThis GitHub repository is a KISS project in the form of a	/	localhost	70
 iCLI tool. It allows you to convert Markdown and HTML to	/	localhost	70
 igophermap, .gph and .txt files. It was originally designed	/	localhost	70
-ito convert blog posts written in Markdown format.	/	localhost	70
+ito convert my blog posts written in Markdown format.	/	localhost	70
 i	/	localhost	70
 i## Getting started	/	localhost	70
 i	/	localhost	70
@@ -92,10 +92,6 @@ iguidelines in CONTRIBUTING.md.	/	localhost	70
 1CONTRIBUTING.md	/CONTRIBUTING.md	localhost	70
 i	/	localhost	70
 i## Potential improvements	/	localhost	70
-i	/	localhost	70
-iA potential improvement could be to add a line with	/	localhost	70
-iReferences before writing the references when using the -	/	localhost	70
-ireference-position option with the value after-all.	/	localhost	70
 i	/	localhost	70
 iIt would also be necessary to detect lines where there are	/	localhost	70
 ionly references by moving up the tree when a reference is	/	localhost	70

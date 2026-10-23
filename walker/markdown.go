@@ -301,7 +301,7 @@ func (w *Walker) formatDepthOneText(s string) (string, error) {
 
 	s = wordwrap.String(s, w.options.WordWrapLimit())
 
-	sDest := ""
+	var sDest strings.Builder
 	linesRaw := strings.SplitSeq(s, "\n")
 
 	for lineRaw := range linesRaw {
@@ -319,10 +319,10 @@ func (w *Walker) formatDepthOneText(s string) (string, error) {
 			Domain:      w.options.Domain(),
 			Port:        w.options.Port()}
 
-		sDest += line.StringFromFileFormat(w.options.FileFormat()) + "\n"
+		sDest.WriteString(line.StringFromFileFormat(w.options.FileFormat()) + "\n")
 	}
 
-	return sDest, nil
+	return sDest.String(), nil
 }
 
 func (w *Walker) Walk(node ast.Node) (string, error) {
@@ -348,6 +348,24 @@ func (w *Walker) Walk(node ast.Node) (string, error) {
 	if len(w.ctx.ReferencesQueue) > 0 &&
 		(w.options.ReferencePosition() == AfterBlocks && w.ctx.Depth.Value() == 1) ||
 		(w.options.ReferencePosition() == AfterTraverse && w.ctx.Depth.Value() == 0) {
+		if w.options.ReferencePosition() == AfterTraverse {
+			emptyLine := gophermap.Line{
+				ItemType:    gophermap.ItemTypeInlineText,
+				Description: "",
+				Path:        "/",
+				Domain:      w.options.Domain(),
+				Port:        w.options.Port()}
+			s += emptyLine.StringFromFileFormat(w.options.FileFormat()) + "\n"
+
+			referencesLine := gophermap.Line{
+				ItemType:    gophermap.ItemTypeInlineText,
+				Description: "Below are the references.",
+				Path:        "/",
+				Domain:      w.options.Domain(),
+				Port:        w.options.Port()}
+			s += referencesLine.StringFromFileFormat(w.options.FileFormat()) + "\n"
+		}
+
 		for _, line := range w.ctx.ReferencesQueue {
 			s += line.StringFromFileFormat(w.options.FileFormat()) + "\n"
 		}

@@ -240,7 +240,7 @@ func TestWalkDocument(t *testing.T) {
 		{
 			source: `# Conclusion
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed [_**ALINK**_](https://a.com) eros nec interdum vestibulum. Sed elementum scelerisque euismod. Praesent pellentesque justo eu ex iaculis ullamcorper. Nulla suscipit purus quis sagittis sagittis. Sed eget tempus odio. Interdum et malesuada fames ac ante https://example.com primis in faucibus. Suspendisse eget orci erat. Sed volutpat maximus [**BLINK**](https://a.com) eu commodo. Praesent tristique non nibh blandit [**BLINK**](https://a.com). Etiam tempus nisi urna, non accumsan ante laoreet ac. Nam et lectus pharetra risus rhoncus facilisis. Suspendisse eu quam venenatis ipsum ![hello][id] scelerisque. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed [_**ALINK**_](https://a.com) eros nec interdum vestibulum. Sed elementum scelerisque euismod. Praesent pellentesque justo eu ex iaculis ullamcorper. Nulla suscipit purus quis sagittis sagittis. Sed eget tempus odio. Interdum et malesuada fames ac ante https://example.com primis in faucibus. Suspendisse eget orci erat. Sed volutpat maximus [**BLINK**](https://a.com) eu commodo. Praesent tristique non nibh blandit [**BLINK**](https://a.com). Etiam tempus nisi urna, non accumsan ante laoreet ac. Nam et lectus pharetra risus rhoncus facilisis. Suspendisse eu quam venenatis ipsum ![hello][id] scelerisque.
 
 **a**
 
@@ -251,8 +251,8 @@ _c_
 **aa
 ddd**
 
-a  
-b  
+a
+b
 c
 
 ## H2
@@ -292,11 +292,11 @@ https://example.com
 > bb
 > b
 > b
-> 
+>
 > C c c c **AA**
 > # a a
 > # d
-> 
+>
 > > c
 > > c
 > # aa
@@ -447,6 +447,8 @@ iaaaa	/	localhost	70
 i	/	localhost	70
 iaaaa	/	localhost	70
 iaaaa	/	localhost	70
+i	/	localhost	70
+iBelow are the references.	/	localhost	70
 h[1] a	URL:https://a.com	a.com	443
 h[2] https://a.com	URL:https://a.com	a.com	443
 h[3] https://a.com	URL:https://a.com	a.com	443
@@ -478,6 +480,8 @@ aaaa
 
 aaaa
 aaaa
+
+Below are the references.
 [1] https://a.com
 [2] https://a.com
 `,
@@ -498,7 +502,7 @@ func TestWalkList(t *testing.T) {
     - aa
     - d
       1. e
-      2. e 
+      2. e
 `,
 			expected: testEmptyGophermapLineString + `i- a	/	localhost	70
 i- a	/	localhost	70

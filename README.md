@@ -6,7 +6,7 @@
 
 The name of the project is lueur, pronounced \\lɥœʁ\\, which is a French word for vivid, momentary expression.
 
-This GitHub repository is a KISS project in the form of a CLI tool. It allows you to convert Markdown and HTML to gophermap, .gph and .txt files. It was originally designed to convert blog posts written in Markdown format.
+This GitHub repository is a KISS project in the form of a CLI tool. It allows you to convert Markdown and HTML to gophermap, .gph and .txt files. It was originally designed to convert my blog posts written in Markdown format.
 
 ## Getting started
 
@@ -60,8 +60,4 @@ If you want to help the project, you can follow the guidelines in [CONTRIBUTING.
 
 ## Potential improvements
 
-A potential improvement could be to add a line with `References` before writing the references when using the `-reference-position` option with the value `after-all`.
-
 It would also be necessary to detect lines where there are only references by moving up the tree when a reference is found, probably with memoization.
-
-

@@ -5,13 +5,13 @@
 
 ((builtwithnix badge)[3])[4]
 
-The name of the project is lueur, pronounced \lɥœʁ\, which
+The name of the project is lueur, pronounced \\lɥœʁ\\, which
 is a French word for vivid, momentary expression.
 
 This GitHub repository is a KISS project in the form of a
 CLI tool. It allows you to convert Markdown and HTML to
 gophermap, .gph and .txt files. It was originally designed
-to convert blog posts written in Markdown format.
+to convert my blog posts written in Markdown format.
 
 ## Getting started
 
@@ -79,13 +79,11 @@ guidelines in (CONTRIBUTING.md)[15].
 
 ## Potential improvements
 
-A potential improvement could be to add a line with
-References before writing the references when using the -
-reference-position option with the value after-all.
-
 It would also be necessary to detect lines where there are
 only references by moving up the tree when a reference is
 found, probably with memoization.
+
+Below are the references.
 [1] https://github.com/theobori/lueur/actions/workflows/build.yml/badge.svg
 [2] https://github.com/theobori/lueur/actions/workflows/build.yml
 [3] https://builtwithnix.org/badge.svg
